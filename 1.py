@@ -305,16 +305,40 @@
 # s1 = reg_stu("zhangsan", 20) #调用函数reg_stu，传入参数name和age，使用默认值gender和city
 # print(s1)
 
-def calc_data(*args, **kwargs):
-    min_data = min(args) #计算args中的最小值
-    max_data = max(args) #计算args中的最大值
-    avg_data = sum(args) / len(args) #计算args中的平均值
+# def calc_data(*args, **kwargs):
+#     min_data = min(args) #计算args中的最小值
+#     max_data = max(args) #计算args中的最大值
+#     avg_data = sum(args) / len(args) #计算args中的平均值
 
-    if kwargs.get("round") is not None: #如果kwargs中有键"round"，则将avg_data四舍五入到指定的小数位数
-        avg_data = round(avg_data, kwargs["round"])
-    if kwargs.get("print"):
-        print(f"Min: {min_data}, Max: {max_data}, Avg: {avg_data}") #如果kwargs中有键"print"，则输出min_data、max_data和avg_data的值
-    return {"min": min_data, "max": max_data, "avg": avg_data} #返回一个字典，包含min、max、avg以及kwargs中的键值对
+#     if kwargs.get("round") is not None: #如果kwargs中有键"round"，则将avg_data四舍五入到指定的小数位数
+#         avg_data = round(avg_data, kwargs["round"])
+#     if kwargs.get("print"):
+#         print(f"Min: {min_data}, Max: {max_data}, Avg: {avg_data}") #如果kwargs中有键"print"，则输出min_data、max_data和avg_data的值
+#     return {"min": min_data, "max": max_data, "avg": avg_data} #返回一个字典，包含min、max、avg以及kwargs中的键值对
 
-print(calc_data(2,8,129.63,76.6,87,round=3)) #调用函数calc_data，传入多个位置参数和关键字参数
+# print(calc_data(2,8,129.63,76.6,87,round=3)) #调用函数calc_data，传入多个位置参数和关键字参数
 
+# def add(x, y):
+#     return x + y
+
+# def sub(x, y):
+#     return x - y
+
+# def calc(x, y, oper):
+#     return oper(x, y) #调用oper函数，传入参数x和y
+
+# result = calc(19,5,add)
+# print(result) #输出result的值
+
+# data_list =  ["c++", "python", "java", "c#", "javascript"]
+# data_list.sort(key=len, reverse=True) #按照字符串长度排序
+# print(data_list) #输出排序后的列表
+
+#计算n的阶乘
+def jc(n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n * jc(n - 1) #递归调用函数jc，传入参数n-1，直到n等于0或1时返回1
+
+print(jc(0)) #调用函数jc，传入参数5，输出5的阶乘
