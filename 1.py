@@ -342,3 +342,15 @@ def jc(n):
         return n * jc(n - 1) #递归调用函数jc，传入参数n-1，直到n等于0或1时返回1
 
 print(jc(0)) #调用函数jc，传入参数5，输出5的阶乘
+
+from abc import my_fun
+
+my_fun.log_separator1() #调用模块my_fun中的函数log_separator1，输出分隔线
+
+class Student:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def introduce(self):
+        print(f"Hello, my name is {self.name} and I am {self.age} years old.") #输出学生的姓名和年龄
